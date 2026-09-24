@@ -9,47 +9,72 @@
 
 </div>
 
-A research project focused on predictive human locomotor intent recognition for adaptive lower-limb exoskeleton control.
+This repository is configured as a presentation-style GitHub landing page. Place your slide images into the `slides/` folder and the page will display them one after another as a deck.
 
-## Overview
+## Presentation slides
 
-This work investigates how to anticipate user movement intentions before the motion is fully executed, enabling more natural, responsive, and safe assistance from wearable robotic systems.
+### Slide 1 — Title
 
-The project combines:
-- biomechanics-aware signal analysis,
-- deep learning for temporal intent prediction,
-- multimodal locomotion modeling,
-- experimental evaluation and comparative analysis.
+![Slide 1](slides/slide-1.png)
 
-## Why this project matters
+### Slide 2 — Problem and motivation
 
-Lower-limb exoskeletons need to move in sync with the user rather than react only after motion has already started. The goal is to predict intent early enough to support walking transitions, gait adaptation, and safe assistance in real time.
+![Slide 2](slides/slide-2.png)
 
-This repository covers the full research workflow, from data generation and preprocessing to model training, experiments, and monograph documentation.
+### Slide 3 — System overview
 
-## Key research directions
+![Slide 3](slides/slide-3.png)
 
-- Human intent prediction from wearable sensor data
-- Temporal modeling of locomotor transitions
-- Adaptive assistance for gait and posture control
-- Domain generalization across users
-- Few-shot and transfer learning strategies
-- Practical deployment considerations for wearable robotics
+### Slide 4 — Methodology
 
-## Repository structure
+![Slide 4](slides/slide-4.png)
+
+### Slide 5 — Results
+
+![Slide 5](slides/slide-5.png)
+
+### Slide 6 — Conclusion and future work
+
+![Slide 6](slides/slide-6.png)
+
+## Project description
+
+This project focuses on predictive human locomotor intent recognition for adaptive lower-limb exoskeletons. The core idea is to anticipate user intent before movement is fully executed, enabling smoother and safer assistance in wearable robotic systems.
+
+The workflow includes:
+- data generation
+- preprocessing and signal processing
+- deep learning model development
+- experiments and evaluation
+- documentation and presentation materials
+
+## Documentation
+
+- Full PDF documentation: https://drive.google.com/file/d/1H6S0WTeTOPKSrNXUZ-H9zbas9I5VvW2L/view?usp=sharing
+- Full monograph source: `Monograph_Full.md`
+- PDF version: `Monograph_Full.pdf`
+
+## Project structure
 
 ```text
 .
-├── Monograph_Full.md         # Full research monograph in Markdown
-├── Monograph_Full.pdf        # PDF export of the documentation
-├── README.md                 # Project landing page
+├── README.md
+├── Monograph_Full.md
+├── Monograph_Full.pdf
+├── slides/
+│   ├── slide-1.png
+│   ├── slide-2.png
+│   ├── slide-3.png
+│   ├── slide-4.png
+│   ├── slide-5.png
+│   └── slide-6.png
 ├── code/
-│   ├── data_generator.py     # Synthetic and structured data generation
-│   ├── preprocessing.py     # Feature engineering and signal processing
-│   ├── models.py            # Deep learning architectures
-│   ├── training.py          # Training pipeline
-│   ├── run_experiments.py   # Experiment runner
-│   └── requirements.txt     # Project dependencies
+│   ├── data_generator.py
+│   ├── preprocessing.py
+│   ├── models.py
+│   ├── training.py
+│   ├── run_experiments.py
+│   └── requirements.txt
 ├── sections/
 │   ├── section_1_introduction.md
 │   ├── section_2_literature_review.md
@@ -61,32 +86,14 @@ This repository covers the full research workflow, from data generation and prep
 └── ...
 ```
 
-## Documentation
+## Notes
 
-- Full PDF documentation: https://drive.google.com/file/d/1H6S0WTeTOPKSrNXUZ-H9zbas9I5VvW2L/view?usp=sharing
-- Full monograph source: `Monograph_Full.md`
+> To make the GitHub page look exactly like a slide deck, add your actual presentation images into the `slides/` folder using the names shown above.
 
-## Project goals
-
-1. Improve predictive accuracy for locomotor intent recognition.
-2. Reduce latency between human intention and assistive response.
-3. Develop models robust to user variability and noisy measurements.
-4. Support real-world deployment in adaptive exoskeleton control systems.
-
-## Methodology snapshot
-
-The project investigates deep architectures such as CNNs, LSTMs, ConvLSTM, and attention-based temporal models for predicting locomotor state transitions using sensor-driven signals.
-
-## Status
-
-This repository is intended for research documentation, reproducible experiments, and academic sharing.
-
-## Contact
-
-Project author: Amanat Korgan
+> If your slide files have different names, simply update the markdown image paths in this README.
 
 ---
 
 <p align="center">
-  <strong>Designed for research, reproducibility, and practical exoskeleton intelligence.</strong>
+  <strong>Research, documentation, and presentation in one place.</strong>
 </p>
