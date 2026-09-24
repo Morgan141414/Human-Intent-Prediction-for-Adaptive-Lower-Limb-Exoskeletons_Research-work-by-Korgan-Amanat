@@ -1,99 +1,108 @@
-# Human Intent Prediction for Adaptive Lower-Limb Exoskeletons
-
 <div align="center">
 
-![Project Banner](https://img.shields.io/badge/Research-Exoskeleton%20AI-blue)
-![Python](https://img.shields.io/badge/Python-3.10%2B-3776AB)
-![Deep%20Learning](https://img.shields.io/badge/Deep%20Learning-CNN%2FLSTM%2FAttention-5F9EA0)
-![Docs](https://img.shields.io/badge/Docs-PDF%20%26%20Monograph-green)
+# Раннее прогнозирование двигательных намерений человека
+
+### Минимальные носимые IMU‑датчики для адаптивного экзоскелета нижних конечностей
+
+Исследовательский проект о том, как распознавать намерение начать движение до его полного выполнения — по сигналам инерциальных датчиков и с учётом различий между пользователями.
+
+[📄 Полная монография (PDF)](https://drive.google.com/file/d/1H6S0WTeTOPKSrNXUZ-H9zbas9I5VvW2L/view?usp=sharing) · [🖥️ Презентация ниже](#презентация) · [🧪 Код экспериментов](code/)
+
+![Python](https://img.shields.io/badge/Python-3.10%2B-3776AB?logo=python&logoColor=white)
+![Focus](https://img.shields.io/badge/Focus-IMU%20%7C%20early%20intent-16448F)
+![Status](https://img.shields.io/badge/Study-simulation%20prototype-orange)
 
 </div>
 
-This repository is configured as a presentation-style GitHub landing page. Place your slide images into the `slides/` folder and the page will display them one after another as a deck.
+---
 
-## Presentation slides
+## О проекте
 
-### Slide 1 — Title
+Экзоскелету важно не только распознать выполняемое движение, но и заранее оценить намерение пользователя. В проекте рассматриваются три практических вопроса: насколько далеко вперёд можно прогнозировать движение, как модель переносится на нового человека и сколько IMU‑датчиков достаточно для полезного прогноза.
 
-![Slide 1](slides/slide-1.png)
+В программном прототипе рассматриваются модели Random Forest, LSTM, ConvLSTM с attention и Transformer, скользящие окна IMU, оценка macro F1, схема Leave‑One‑Subject‑Out (LOSO), адаптация с малым числом примеров и сравнение конфигураций датчиков.
 
-### Slide 2 — Problem and motivation
+> **О статусе результатов.** Числа и графики в презентации относятся к симуляционному прототипу и виртуальным субъектам. Они не являются результатами клинического исследования или испытаний на реальных пользователях и требуют проверки на собранных данных и физическом устройстве.
 
-![Slide 2](slides/slide-2.png)
+## Презентация
 
-### Slide 3 — System overview
+Слайды идут по порядку; нажмите на изображение, чтобы открыть его в полном размере.
 
-![Slide 3](slides/slide-3.png)
+### 01 · Раннее прогнозирование намерения движения
 
-### Slide 4 — Methodology
+[![Титульный слайд проекта](slides/slide-01.png)](slides/slide-01.png)
 
-![Slide 4](slides/slide-4.png)
+### 02 · Прогнозировать намерение, а не строить экзоскелет
 
-### Slide 5 — Results
+[![Постановка задачи](slides/slide-02.png)](slides/slide-02.png)
 
-![Slide 5](slides/slide-5.png)
+### 03 · Три проверки полезности прогноза
 
-### Slide 6 — Conclusion and future work
+[![Горизонт, перенос между субъектами и число датчиков](slides/slide-03.png)](slides/slide-03.png)
 
-![Slide 6](slides/slide-6.png)
+### 04 · Сравнение конфигураций IMU по macro F1
 
-## Project description
+[![Сравнение числа IMU-датчиков](slides/slide-04.png)](slides/slide-04.png)
 
-This project focuses on predictive human locomotor intent recognition for adaptive lower-limb exoskeletons. The core idea is to anticipate user intent before movement is fully executed, enabling smoother and safer assistance in wearable robotic systems.
+### 05 · От сигналов IMU к прогнозу в скользящем окне
 
-The workflow includes:
-- data generation
-- preprocessing and signal processing
-- deep learning model development
-- experiments and evaluation
-- documentation and presentation materials
+[![Схема прогнозирования по сигналам IMU](slides/slide-05.png)](slides/slide-05.png)
 
-## Documentation
+### 06 · План экспериментальной оценки
 
-- Full PDF documentation: https://drive.google.com/file/d/1H6S0WTeTOPKSrNXUZ-H9zbas9I5VvW2L/view?usp=sharing
-- Full monograph source: `Monograph_Full.md`
-- PDF version: `Monograph_Full.pdf`
+[![Проверки горизонта прогноза, переноса и количества IMU](slides/slide-06.png)](slides/slide-06.png)
 
-## Project structure
+### 07 · Few-shot адаптация: иллюстративные результаты симуляции
+
+[![Пример изменения macro F1 при адаптации](slides/slide-07.png)](slides/slide-07.png)
+
+### 08 · Следующий шаг: проверка в реальном контуре управления
+
+[![План дальнейшей проверки системы](slides/slide-08.png)](slides/slide-08.png)
+
+## Материалы
+
+- **[Полная монография в PDF на Google Drive](https://drive.google.com/file/d/1H6S0WTeTOPKSrNXUZ-H9zbas9I5VvW2L/view?usp=sharing)**
+- [Исходник монографии в Markdown](Monograph_Full.md)
+- [PDF в репозитории](Monograph_Full.pdf)
+- [Исходный код и зависимости](code/)
+
+## Структура репозитория
 
 ```text
 .
-├── README.md
-├── Monograph_Full.md
-├── Monograph_Full.pdf
-├── slides/
-│   ├── slide-1.png
-│   ├── slide-2.png
-│   ├── slide-3.png
-│   ├── slide-4.png
-│   ├── slide-5.png
-│   └── slide-6.png
+├── README.md                 # Описание проекта и слайды
+├── Monograph_Full.md         # Исходник монографии
+├── Monograph_Full.pdf        # PDF монографии
+├── slides/                   # Восемь изображений презентации
 ├── code/
-│   ├── data_generator.py
-│   ├── preprocessing.py
-│   ├── models.py
-│   ├── training.py
-│   ├── run_experiments.py
+│   ├── data_generator.py     # Генерация симулированных сигналов
+│   ├── preprocessing.py      # Обработка сигналов
+│   ├── models.py             # Модели машинного обучения
+│   ├── training.py           # Обучение
+│   ├── run_experiments.py    # Запуск демонстрационных экспериментов
 │   └── requirements.txt
-├── sections/
-│   ├── section_1_introduction.md
-│   ├── section_2_literature_review.md
-│   ├── section_3_methodology.md
-│   ├── section_4_experiments.md
-│   ├── section_5_discussion.md
-│   ├── section_6_conclusion.md
-│   └── section_7_references.md
-└── ...
+└── sections/                 # Главы монографии
 ```
 
-## Notes
+## Запуск демонстрационного эксперимента
 
-> To make the GitHub page look exactly like a slide deck, add your actual presentation images into the `slides/` folder using the names shown above.
+Требуется Python 3.10 или новее.
 
-> If your slide files have different names, simply update the markdown image paths in this README.
+```bash
+cd code
+python -m venv .venv
+source .venv/bin/activate  # Windows: .venv\Scripts\activate
+pip install -r requirements.txt
+python run_experiments.py
+```
+
+Скрипт формирует демонстрационные результаты в `code/results/`. Он использует симулированные значения; для научной оценки модели необходимо обучить и проверить на реальных размеченных данных.
 
 ---
 
-<p align="center">
-  <strong>Research, documentation, and presentation in one place.</strong>
-</p>
+<div align="center">
+
+**Автор:** Korgan Amanat · Исследование, код и презентация — в одном репозитории.
+
+</div>
